@@ -312,39 +312,7 @@
     border: 1px solid rgba(255,111,173,0.2);
   }
 
-  /* PATENT */
-  .patent-card {
-    grid-column: span 2;
-    background: linear-gradient(135deg, rgba(255,111,173,0.08) 0%, rgba(212,168,255,0.08) 100%);
-    border: 1.5px solid rgba(255,111,173,0.35);
-    border-radius: 28px; padding: 2.5rem;
-    display: flex; align-items: center; gap: 2rem;
-    position: relative; overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .patent-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(255,111,173,0.12); }
-  .patent-card::before {
-    content: '🌸';
-    position: absolute; right: 2.5rem;
-    font-size: 7rem; opacity: 0.08; pointer-events: none;
-  }
-  .patent-badge {
-    background: linear-gradient(135deg, var(--pink1), var(--lilac));
-    border-radius: 20px; padding: 1.2rem;
-    font-size: 2rem; flex-shrink: 0;
-    box-shadow: 0 10px 28px rgba(255,111,173,0.35);
-  }
-  .patent-text h3 {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1.2rem; color: var(--text); margin-bottom: 0.4rem;
-  }
-  .patent-text p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-  .patent-meta {
-    display: inline-block; margin-top: 0.8rem;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-    color: var(--deep); background: rgba(255,111,173,0.12);
-    border: 1px solid rgba(255,111,173,0.3); padding: 0.3rem 0.9rem; border-radius: 100px;
-  }
+  
 
   /* ✿ SKILLS */
   #skills { background: var(--bg); }
@@ -402,6 +370,12 @@
     transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s, box-shadow 0.3s;
     cursor: none; position: relative; overflow: hidden;
   }
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
   .cert-card::before {
     content: '';
     position: absolute; top: 0; left: 0; right: 0; height: 4px;
@@ -466,6 +440,44 @@
     padding: 0.3rem 1rem; border-radius: 100px;
     font-size: 0.78rem; font-weight: 700; border: 1px solid rgba(255,111,173,0.25);
   }
+
+
+
+  /* PATENT */
+  .patent-card {
+    background: linear-gradient(135deg, rgba(255,111,173,0.08) 0%, rgba(212,168,255,0.08) 100%);
+    border: 1.5px solid rgba(255,111,173,0.35);
+    border-radius: 28px; padding: 2.5rem;
+    display: flex; align-items: center; gap: 2rem;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+margin-bottom: 1rem;
+  }
+  .patent-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(255,111,173,0.12); }
+  .patent-card::before {
+    content: '🌸';
+    position: absolute; right: 2.5rem;
+    font-size: 7rem; opacity: 0.08; pointer-events: none;
+  }
+  .patent-badge {
+    background: linear-gradient(135deg, var(--pink1), var(--lilac));
+    border-radius: 20px; padding: 1.2rem;
+    font-size: 2rem; flex-shrink: 0;
+    box-shadow: 0 10px 28px rgba(255,111,173,0.35);
+  }
+  .patent-text h3 {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1.2rem; color: var(--text); margin-bottom: 1.5rem;
+  }
+  .patent-text p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+  .patent-meta {
+    display: inline-block; margin-top: 0.8rem;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--deep); background: rgba(255,111,173,0.12);
+    border: 1px solid rgba(255,111,173,0.3); padding: 0.3rem 0.9rem; border-radius: 100px;
+  }
+
 
   /* ✿ CONTACT */
   #contact { background: var(--bg); text-align: center; }
@@ -593,8 +605,8 @@
         <div class="card-name-sm">Mansa Thallapalli</div>
         <div class="card-role-sm">AI/ML Engineer · Patent Holder ✿</div>
         <div class="card-stats">
-          <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Projects</div></div>
-          <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Certs</div></div>
+          <div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Projects</div></div>
+          <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Certs</div></div>
           <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Patent</div></div>
           <div class="stat-box"><div class="stat-num">'27</div><div class="stat-label">Grad</div></div>
         </div>
@@ -654,13 +666,7 @@
         </div>
       </div>
 
-      <div class="patent-card reveal">
-        <div class="patent-badge">🛰️</div>
-        <div class="patent-text">
-          <h3>Registered Design Patent — Indian Patent Office</h3>
-          <p>Agriculture Soil Monitoring AI-Drone Device (Design No. 455144-001). An intelligent AI-powered drone for real-time agricultural soil analysis.</p>
-          <div class="patent-meta">🌸 April 2025 · Design No. 455144-001</div>
-        </div>
+      
       </div>
 
     </div>
@@ -680,7 +686,7 @@
           <div class="skill-cat-label">Core Domain</div>
           <div class="skill-cat-title">AI/ML & Data Science</div>
           <div class="skill-pills">
-            <span class="skill-pill">Model Building</span><span class="skill-pill">Neural Networks</span><span class="skill-pill">NLP</span><span class="skill-pill">Computer Vision</span><span class="skill-pill">TensorFlow</span>
+            <span class="skill-pill">Model Building</span><span class="skill-pill">Neural Networks</span><span class="skill-pill">NLP</span><span class="skill-pill">Computer Vision</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">EfficientNetB0</span><span class="skill-pill">Scikit-Image</span>
           </div>
         </div>
         <div class="skill-cat reveal">
@@ -696,12 +702,17 @@
         <div class="skill-cat reveal">
           <div class="skill-cat-label">Data</div>
           <div class="skill-cat-title">Databases</div>
-          <div class="skill-pills"><span class="skill-pill">MongoDB</span><span class="skill-pill">SQL</span></div>
+          <div class="skill-pills"><span class="skill-pill">MongoDB</span><span class="skill-pill">SQL</span><span class="skill-pill">SQL-lite</span></div>
         </div>
         <div class="skill-cat reveal">
           <div class="skill-cat-label">Tools</div>
           <div class="skill-cat-title">Dev Environment</div>
-          <div class="skill-pills"><span class="skill-pill">VS Code</span><span class="skill-pill">Jupyter Notebook</span></div>
+          <div class="skill-pills"><span class="skill-pill">VS Code</span><span class="skill-pill">Jupyter Notebook</span><span class="skill-pill">Streamlit</span><span class="skill-pill">Google colab</span><span class="skill-pill">Git</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="skill-cat-label">NLP-RAG</div>
+          <div class="skill-cat-title">NLP-RAG</div>
+          <div class="skill-pills"><span class="skill-pill">HuggingFace Transformers</span><span class="skill-pill"> NLTK</span><span class="skill-pill"> Document chunking & retrieval</span></div>
         </div>
       </div>
 
@@ -723,12 +734,16 @@
           <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%;animation-delay:0.4s"></div></div>
         </div>
         <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">React / Node.js</span><span class="skill-bar-pct">65%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:65%;animation-delay:0.5s"></div></div>
+          <div class="skill-bar-header"><span class="skill-bar-name">React / Node.js</span><span class="skill-bar-pct">75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%;animation-delay:0.5s"></div></div>
         </div>
         <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">Databases</span><span class="skill-bar-pct">60%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:60%;animation-delay:0.6s"></div></div>
+          <div class="skill-bar-header"><span class="skill-bar-name">Databases</span><span class="skill-bar-pct">70%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%;animation-delay:0.7s"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-name">NLP</span><span class="skill-bar-pct">70%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%;animation-delay:0.7s"></div></div>
         </div>
       </div>
     </div>
@@ -742,6 +757,14 @@
   <div class="section-inner">
     <div class="section-label">Credentials</div>
     <h2 class="section-title"><em>Certifications</em></h2>
+    <div class="patent-card reveal">
+      <div class="patent-badge">🛰️</div>
+      <div class="patent-text">
+        <h3>Registered Design Patent — Indian Patent Office</h3>
+        <p>Agriculture Soil Monitoring AI-Drone Device (Design No. 455144-001). An intelligent AI-powered drone for real-time agricultural soil analysis.</p>
+        <div class="patent-meta">🌸 April 2025 · Design No. 455144-001</div>
+      </div>
+    </div>
     <div class="certs-grid">
       <div class="cert-card reveal">
         <div class="cert-icon">☁️</div>
@@ -757,6 +780,12 @@
         <div class="cert-icon">📊</div>
         <div class="cert-org">Coursera</div>
         <div class="cert-name">Machine Learning Specialization Certificate</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📊</div>
+        <div class="cert-org">NPTEL Certification</div>
+        <div class="cert-name">Strategic Performance Management (Funded by the MoE, Govt. of India)</div>
+      </div>
       </div>
     </div>
   </div>
@@ -784,6 +813,13 @@
         <div class="exp-title">Ideathon Participant</div>
         <div class="exp-meta">ML for Social Impact</div>
         <div class="exp-desc">Applied ML models to real-time social challenges, developing impactful solutions from scratch in a competitive ideation environment.</div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-title">Google for Startups Hub (GCC Event) – T-Hub Hyderabad</div>
+        <div class="exp-meta">Volunteering</div>
+        <div class="exp-desc">Assisted in operations and event coordination for the technical community gathering and AI-first startup
+          ecosystem mixer. Engaged with developers, founders, and industry representatives analyzing advancements in Agentic AI
+          architectures, cloud workflows, and Google's startup stack.</div>
       </div>
     </div>
   </div>
@@ -814,7 +850,7 @@
     <div class="contact-card reveal">
       <div class="contact-flowers">✿</div>
       <div class="contact-title">Let's <em>Connect!</em></div>
-      <div class="contact-sub">Open to internships, research collabs & exciting AI/ML projects. Don't be shy — say hi! 🌸</div>
+      <div class="contact-sub">Open to internships, research collabs & exciting AI/ML projects.</div>
       <div class="contact-links">
         <a href="mailto:thallapallimansa7@gmail.com" class="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -838,7 +874,7 @@
 </section>
 
 <footer>
-  Made with <span>✿ love</span> · Mansa Thallapalli © 2025
+  Made with <span>✿ love</span> · Mansa Thallapalli © 
 </footer>
 
 <script>
