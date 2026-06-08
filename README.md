@@ -1,960 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mansa Thallapalli ✿ AI/ML Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #fff5f8;
-    --bg2: #fff0f5;
-    --surface: #ffffff;
-    --card: #fff8fa;
-    --border: rgba(255,150,190,0.25);
-    --pink1: #ff6fad;
-    --pink2: #ffb3d1;
-    --pink3: #ffd6e7;
-    --pink4: #ff3d8f;
-    --peach: #ffb49a;
-    --lilac: #d4a8ff;
-    --mint: #a8f0d4;
-    --yellow: #ffe066;
-    --text: #3a1a2e;
-    --muted: #b07090;
-    --deep: #8b2252;
-  }
+<div align="center">
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=Mansa%20Thallapalli&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=AI%20%2F%20ML%20Engineer%20%E2%80%A2%20Patent%20Holder%20%E2%80%A2%20Portfolio%20%E2%9C%BF&descSize=18&descAlignY=60&animation=fadeIn" width="100%" />
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    overflow-x: hidden;
-    cursor: none;
-  }
+<br/>
 
-  /* ✿ CUSTOM CURSOR */
-  .cursor {
-    width: 14px; height: 14px;
-    background: var(--pink1);
-    border-radius: 50%;
-    position: fixed; pointer-events: none; z-index: 9999;
-    transform: translate(-50%,-50%);
-    transition: transform 0.12s, width 0.2s, height 0.2s, background 0.2s;
-    box-shadow: 0 0 12px rgba(255,111,173,0.6);
-  }
-  .cursor-ring {
-    width: 38px; height: 38px;
-    border: 2px solid rgba(255,111,173,0.45);
-    border-radius: 50%;
-    position: fixed; pointer-events: none; z-index: 9998;
-    transform: translate(-50%,-50%);
-    transition: transform 0.2s ease;
-  }
+[![Portfolio Live](https://img.shields.io/badge/🌸%20Portfolio%20Live-mansa15.github.io-cc7ab5?style=for-the-badge&logoColor=white)](https://mansa15.github.io/my-website/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mansa%20Thallapalli-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mansa-thallapalli-561441296/)
+[![GitHub](https://img.shields.io/badge/GitHub-Mansa15-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mansa15)
+[![Email](https://img.shields.io/badge/Email-thallapallimansa7@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thallapallimansa7@gmail.com)
 
-  /* ✿ FLOATING HEARTS BG */
-  .hearts-bg {
-    position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
-  }
-  .heart {
-    position: absolute; font-size: 1rem; opacity: 0.06;
-    animation: floatHeart linear infinite;
-  }
-  @keyframes floatHeart {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.06; }
-    90% { opacity: 0.06; }
-    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-  }
+<br/>
 
-  /* ✿ BLOBS */
-  .blob {
-    position: absolute; border-radius: 50%;
-    filter: blur(80px); pointer-events: none; z-index: 0;
-  }
-  .blob1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,111,173,0.2) 0%, transparent 70%); top: -80px; right: -80px; animation: blobFloat 10s ease-in-out infinite; }
-  .blob2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(212,168,255,0.18) 0%, transparent 70%); bottom: 50px; left: -50px; animation: blobFloat 13s ease-in-out infinite reverse; }
-  .blob3 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,224,102,0.15) 0%, transparent 70%); top: 40%; right: 20%; animation: blobFloat 9s ease-in-out infinite 2s; }
-  @keyframes blobFloat { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-30px) scale(1.06)} }
+> *A beautiful, responsive AI/ML portfolio showcasing end-to-end intelligent systems — from biometric auth to medical imaging — built with pure HTML, CSS & JavaScript.*
 
-  /* ✿ NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(255,245,248,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900; font-size: 1.25rem;
-    color: var(--deep); letter-spacing: -0.01em;
-  }
-  .nav-logo span { color: var(--pink1); }
-  .nav-links { display: flex; gap: 2rem; }
-  .nav-links a {
-    color: var(--muted); text-decoration: none;
-    font-size: 0.82rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--pink1); }
+<br/>
 
-  /* ✿ HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 4rem 4rem;
-    position: relative; overflow: hidden;
-  }
-  .hero-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-    position: relative; z-index: 2;
-    max-width: 1200px; margin: 0 auto; width: 100%;
-  }
+</div>
 
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: linear-gradient(135deg, rgba(255,111,173,0.12), rgba(212,168,255,0.12));
-    border: 1px solid rgba(255,111,173,0.35);
-    border-radius: 100px; padding: 0.45rem 1.1rem;
-    font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--pink1); margin-bottom: 1.5rem;
-    animation: fadeUp 0.7s ease both;
-  }
-  .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink1); animation: pulse 1.5s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
+---
 
-  .hero-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900; font-size: clamp(2.8rem, 5.5vw, 5rem);
-    line-height: 1; letter-spacing: -0.02em; color: var(--text);
-    animation: fadeUp 0.7s ease 0.1s both;
-  }
-  .hero-name em { font-style: italic; color: var(--pink1); display: block; }
+## ✿ About This Project
 
-  .hero-bio {
-    margin-top: 1.6rem;
-    font-size: 1rem; line-height: 1.75; color: var(--muted);
-    max-width: 460px;
-    animation: fadeUp 0.7s ease 0.2s both;
-  }
+This is my personal AI & ML portfolio website — designed to reflect both technical depth and an aesthetic, human touch. It's a single-page application built entirely in **vanilla HTML5, CSS3, and JavaScript (ES6+)**, deployed via **GitHub Pages**.
 
-  .hero-cta {
-    margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeUp 0.7s ease 0.3s both;
-  }
-  .btn {
-    padding: 0.85rem 2rem; border-radius: 100px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.88rem; font-weight: 700;
-    cursor: none; text-decoration: none;
-    transition: transform 0.25s, box-shadow 0.25s;
-    display: inline-flex; align-items: center; gap: 0.5rem;
-  }
-  .btn:hover { transform: translateY(-3px); }
-  .btn-pink {
-    background: linear-gradient(135deg, var(--pink1), var(--pink4));
-    color: #fff;
-    box-shadow: 0 8px 30px rgba(255,111,173,0.4);
-  }
-  .btn-pink:hover { box-shadow: 0 14px 40px rgba(255,111,173,0.55); }
-  .btn-soft {
-    background: var(--surface); color: var(--pink1);
-    border: 2px solid var(--pink2);
-  }
-  .btn-soft:hover { border-color: var(--pink1); background: var(--pink3); }
+The site presents my work across **computer vision**, **NLP**, **agentic LLM systems**, and **medical ML**, alongside certifications, experience, and a registered Indian design patent.
 
-  /* ✿ HERO CARD (3D) */
-  .hero-card-wrap {
-    display: flex; justify-content: center; align-items: center;
-    animation: fadeUp 0.7s ease 0.4s both;
-    perspective: 900px;
-  }
-  .hero-3d-card {
-    width: 320px; height: 430px;
-    background: linear-gradient(160deg, #fff 0%, #fff0f7 100%);
-    border-radius: 32px;
-    border: 1.5px solid var(--border);
-    padding: 2.5rem;
-    position: relative; overflow: hidden;
-    transform-style: preserve-3d;
-    box-shadow: 0 30px 80px rgba(255,111,173,0.18), 0 0 0 1px rgba(255,111,173,0.08);
-    transition: transform 0.12s ease-out;
-  }
-  .hero-3d-card::before {
-    content: '✿';
-    position: absolute; bottom: 1.5rem; right: 2rem;
-    font-size: 8rem; opacity: 0.05; pointer-events: none;
-    color: var(--pink1);
-  }
-  .card-deco-top {
-    position: absolute; top: 0; left: 0; right: 0; height: 6px;
-    background: linear-gradient(90deg, var(--pink1), var(--lilac), var(--peach));
-    border-radius: 32px 32px 0 0;
-  }
-  .card-avatar {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--pink1), var(--lilac));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: 1.8rem; color: #fff; margin-bottom: 1.2rem;
-    box-shadow: 0 10px 28px rgba(255,111,173,0.4);
-    position: relative; z-index: 1;
-  }
-  .card-name-sm {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1.1rem; color: var(--text);
-    position: relative; z-index: 1; margin-bottom: 0.2rem;
-  }
-  .card-role-sm {
-    font-size: 0.72rem; color: var(--pink1); font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    position: relative; z-index: 1; margin-bottom: 1.4rem;
-  }
-  .card-stats {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0.7rem; position: relative; z-index: 1;
-  }
-  .stat-box {
-    background: var(--pink3); border-radius: 16px;
-    padding: 0.9rem; text-align: center;
-    border: 1px solid rgba(255,111,173,0.2);
-  }
-  .stat-num {
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: 1.6rem; color: var(--pink1);
-  }
-  .stat-label { font-size: 0.65rem; color: var(--muted); font-weight: 600; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .card-tags {
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-    margin-top: 1.1rem; position: relative; z-index: 1;
-  }
-  .ctag {
-    padding: 0.28rem 0.75rem; border-radius: 100px;
-    font-size: 0.66rem; font-weight: 700;
-    background: rgba(212,168,255,0.2); color: #7c3aed;
-    border: 1px solid rgba(212,168,255,0.4);
-  }
+---
 
-  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+## 🌐 Live Preview
 
-  /* ✿ SECTIONS */
-  section { padding: 7rem 4rem; position: relative; z-index: 2; }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--pink1); margin-bottom: 0.7rem;
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .section-label::before { content: '✿'; font-size: 0.9rem; }
-  .section-title {
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em;
-    color: var(--text); line-height: 1.1; margin-bottom: 3rem;
-  }
-  .section-title em { font-style: italic; color: var(--pink1); }
+<div align="center">
 
-  .divider { height: 1px; background: var(--border); margin: 0 4rem; }
+**[→ Visit mansa15.github.io/my-website ←](https://mansa15.github.io/my-website/)**
 
-  /* ✿ PROJECTS */
-  #projects { background: var(--bg2); }
-  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+</div>
 
-  .project-card {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 28px; padding: 2.2rem;
-    position: relative; overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s, box-shadow 0.3s;
-    cursor: none;
-  }
-  .project-card:hover {
-    transform: translateY(-8px) scale(1.015);
-    border-color: var(--pink1);
-    box-shadow: 0 24px 60px rgba(255,111,173,0.15);
-  }
-  .project-card::after {
-    content: attr(data-num);
-    position: absolute; top: 1.5rem; right: 1.8rem;
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: 3.5rem; color: rgba(255,111,173,0.08);
-    line-height: 1;
-  }
-  .project-icon {
-    width: 52px; height: 52px; border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; margin-bottom: 1.4rem;
-  }
-  .pi1 { background: linear-gradient(135deg, rgba(255,111,173,0.15), rgba(255,111,173,0.05)); }
-  .pi2 { background: linear-gradient(135deg, rgba(168,240,212,0.2), rgba(168,240,212,0.05)); }
-  .pi3 { background: linear-gradient(135deg, rgba(212,168,255,0.2), rgba(212,168,255,0.05)); }
-  .pi4 { background: linear-gradient(135deg, rgba(255,180,154,0.2), rgba(255,180,154,0.05)); }
-  .project-title {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1.05rem; margin-bottom: 0.75rem;
-    line-height: 1.35; color: var(--text);
-  }
-  .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.4rem; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-  .tag {
-    padding: 0.3rem 0.8rem; border-radius: 100px;
-    font-size: 0.68rem; font-weight: 600;
-    background: var(--pink3); color: var(--deep);
-    border: 1px solid rgba(255,111,173,0.2);
-  }
+---
 
-  
+## 🌸 Sections
 
-  /* ✿ SKILLS */
-  #skills { background: var(--bg); }
-  .skills-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
+| Section | Description |
+|---|---|
+| **Hero** | Name, tagline, and animated stats (4+ projects, 4 certs, 1 patent) |
+| **Projects** | Showcase of 4 AI/ML builds with tech tags and descriptions |
+| **Skills & Expertise** | Categorised tech stack with animated progress bars |
+| **Certifications & Patent** | All credentials including Indian Patent Office registration |
+| **Experience** | Hackathons, conferences, volunteering at Google/T-Hub |
+| **Education** | B.Tech AI & ML at Woxsen University (9.07 CGPA) |
+| **Contact** | Email, LinkedIn, GitHub, and phone links |
 
-  .skill-cats { display: flex; flex-direction: column; gap: 1rem; }
-  .skill-cat {
-    background: var(--surface); border: 1.5px solid var(--border);
-    border-radius: 20px; padding: 1.7rem;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s, box-shadow 0.3s;
-    cursor: none;
-  }
-  .skill-cat:hover {
-    transform: translateX(8px);
-    border-color: var(--pink1);
-    box-shadow: -4px 0 20px rgba(255,111,173,0.1), 0 10px 30px rgba(255,111,173,0.08);
-  }
-  .skill-cat-label {
-    font-size: 0.68rem; font-weight: 700; color: var(--pink1);
-    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
-  }
-  .skill-cat-title {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 0.95rem; color: var(--text); margin-bottom: 0.75rem;
-  }
-  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .skill-pill {
-    padding: 0.3rem 0.85rem; border-radius: 100px;
-    font-size: 0.72rem; font-weight: 600;
-    background: var(--pink3); color: var(--deep);
-    border: 1px solid rgba(255,111,173,0.2);
-  }
+---
 
-  .skills-right { display: flex; flex-direction: column; gap: 1.2rem; }
-  .skill-bar-item {}
-  .skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-  .skill-bar-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
-  .skill-bar-pct { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.85rem; color: var(--pink1); }
-  .skill-bar-track { height: 8px; background: var(--pink3); border-radius: 100px; overflow: hidden; }
-  .skill-bar-fill {
-    height: 100%; border-radius: 100px;
-    background: linear-gradient(90deg, var(--pink1), var(--lilac));
-    transform-origin: left;
-    animation: growBar 1.2s cubic-bezier(0.16,1,0.3,1) both;
-  }
-  @keyframes growBar { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+## 🚀 Featured Projects
 
-  /* ✿ CERTIFICATIONS */
-  #certs { background: var(--bg2); }
-  .certs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
-  .cert-card {
-    background: var(--surface); border: 1.5px solid var(--border);
-    border-radius: 24px; padding: 2rem;
-    display: flex; flex-direction: column; gap: 0.9rem;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s, box-shadow 0.3s;
-    cursor: none; position: relative; overflow: hidden;
-  }
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin-top: 2rem;
-}
-  .cert-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--pink1), var(--lilac));
-    opacity: 0; transition: opacity 0.3s;
-  }
-  .cert-card:hover { transform: translateY(-6px); border-color: var(--pink1); box-shadow: 0 16px 40px rgba(255,111,173,0.12); }
-  .cert-card:hover::before { opacity: 1; }
-  .cert-org { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink1); }
-  .cert-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; line-height: 1.4; color: var(--text); }
-  .cert-icon { font-size: 2.2rem; }
+<table>
+<tr>
+<td width="50%">
 
-  /* ✿ EXPERIENCE */
-  #experience { background: var(--bg); }
-  .exp-timeline { position: relative; padding-left: 2.2rem; }
-  .exp-timeline::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 2px; background: linear-gradient(to bottom, var(--pink1), var(--lilac), transparent);
-    border-radius: 2px;
-  }
-  .exp-item { position: relative; padding-bottom: 2.8rem; }
-  .exp-item::before {
-    content: '✿'; position: absolute; left: -2.6rem; top: 0.15rem;
-    font-size: 0.85rem; color: var(--pink1);
-    text-shadow: 0 0 10px rgba(255,111,173,0.5);
-  }
-  .exp-title {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1.1rem; color: var(--text); margin-bottom: 0.3rem;
-  }
-  .exp-meta { font-size: 0.76rem; color: var(--pink1); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.7rem; }
-  .exp-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+**🔒 Secure First — Biometric Auth**
+> Fingernail-based authentication pipeline using YCrCb+HSV segmentation, LBP/GLCM/HOG-lite feature extraction, and cosine similarity matching.
+`Python` `OpenCV` `scikit-image` `SciPy` `Streamlit` `SQLite`
 
-  /* ✿ EDUCATION */
-  #education { background: var(--bg2); }
-  .edu-card {
-    background: linear-gradient(135deg, rgba(255,111,173,0.07) 0%, rgba(212,168,255,0.07) 100%);
-    border: 1.5px solid rgba(255,111,173,0.25);
-    border-radius: 32px; padding: 3.5rem;
-    display: flex; align-items: center; gap: 3rem;
-    position: relative; overflow: hidden;
-  }
-  .edu-card::after {
-    content: '✿';
-    position: absolute; right: 3rem;
-    font-size: 9rem; opacity: 0.04;
-    color: var(--pink1); pointer-events: none;
-  }
-  .edu-logo {
-    width: 85px; height: 85px; border-radius: 24px;
-    background: linear-gradient(135deg, var(--pink1), var(--lilac));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.6rem; flex-shrink: 0;
-    box-shadow: 0 15px 40px rgba(255,111,173,0.35);
-  }
-  .edu-degree { font-size: 0.72rem; font-weight: 700; color: var(--pink1); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .edu-school { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2rem; letter-spacing: -0.02em; margin-bottom: 0.35rem; color: var(--text); }
-  .edu-field { font-size: 0.95rem; color: var(--muted); }
-  .edu-year {
-    display: inline-block; margin-top: 0.9rem;
-    background: var(--pink3); color: var(--deep);
-    padding: 0.3rem 1rem; border-radius: 100px;
-    font-size: 0.78rem; font-weight: 700; border: 1px solid rgba(255,111,173,0.25);
-  }
+</td>
+<td width="50%">
 
+**📝 SnapSummary — NLP Summarizer**
+> Real-time REST API using `facebook/bart-large-cnn` over Flask — chunks multi-page documents into coherent summaries in a single POST call.
+`Python` `Flask` `HuggingFace` `NLTK`
 
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-  /* PATENT */
-  .patent-card {
-    background: linear-gradient(135deg, rgba(255,111,173,0.08) 0%, rgba(212,168,255,0.08) 100%);
-    border: 1.5px solid rgba(255,111,173,0.35);
-    border-radius: 28px; padding: 2.5rem;
-    display: flex; align-items: center; gap: 2rem;
-    position: relative; overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%;
-margin-bottom: 1rem;
-  }
-  .patent-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(255,111,173,0.12); }
-  .patent-card::before {
-    content: '🌸';
-    position: absolute; right: 2.5rem;
-    font-size: 7rem; opacity: 0.08; pointer-events: none;
-  }
-  .patent-badge {
-    background: linear-gradient(135deg, var(--pink1), var(--lilac));
-    border-radius: 20px; padding: 1.2rem;
-    font-size: 2rem; flex-shrink: 0;
-    box-shadow: 0 10px 28px rgba(255,111,173,0.35);
-  }
-  .patent-text h3 {
-    font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1.2rem; color: var(--text); margin-bottom: 1.5rem;
-  }
-  .patent-text p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-  .patent-meta {
-    display: inline-block; margin-top: 0.8rem;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-    color: var(--deep); background: rgba(255,111,173,0.12);
-    border: 1px solid rgba(255,111,173,0.3); padding: 0.3rem 0.9rem; border-radius: 100px;
-  }
+**🫀 PAH Detection — Medical ML**
+> EfficientNetB0 fine-tuned on chest X-rays with Grad-CAM heatmaps, risk-level indicators, and batch CSV export for pulmonary arterial hypertension screening.
+`Python` `TensorFlow/Keras` `EfficientNetB0` `Streamlit`
 
+</td>
+<td width="50%">
 
-  /* ✿ CONTACT */
-  #contact { background: var(--bg); text-align: center; }
-  .contact-card {
-    max-width: 680px; margin: 0 auto;
-    background: var(--surface); border: 1.5px solid var(--border);
-    border-radius: 36px; padding: 4rem;
-    position: relative; overflow: hidden;
-    box-shadow: 0 30px 80px rgba(255,111,173,0.1);
-  }
-  .contact-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(255,111,173,0.08) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .contact-flowers {
-    font-size: 2rem; margin-bottom: 1rem;
-    animation: spinSlow 8s linear infinite;
-    display: inline-block; position: relative; z-index: 1;
-  }
-  @keyframes spinSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-  .contact-title {
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: 2.4rem; letter-spacing: -0.02em;
-    color: var(--text); margin-bottom: 0.9rem;
-    position: relative; z-index: 1;
-  }
-  .contact-title em { font-style: italic; color: var(--pink1); }
-  .contact-sub {
-    color: var(--muted); font-size: 0.97rem;
-    line-height: 1.7; margin-bottom: 2.5rem;
-    position: relative; z-index: 1;
-  }
-  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.9rem; position: relative; z-index: 1; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.85rem 1.7rem; border-radius: 100px;
-    border: 1.5px solid var(--border); color: var(--text);
-    text-decoration: none; font-size: 0.85rem; font-weight: 600;
-    background: var(--bg); transition: all 0.25s;
-  }
-  .contact-link:hover {
-    border-color: var(--pink1); color: var(--pink1);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(255,111,173,0.2);
-    background: var(--pink3);
-  }
-  .contact-link svg { width: 15px; height: 15px; }
+**🌡️ Thermal Fault Detection**
+> Benchmarked multiple fault detection algorithms on thermal image data for industrial equipment condition monitoring.
+`Python` `Thermal Imaging` `Algorithm Design`
 
-  /* ✿ FOOTER */
-  footer {
-    text-align: center; padding: 2rem;
-    font-size: 0.78rem; font-weight: 500;
-    color: var(--muted); border-top: 1px solid var(--border);
-    position: relative; z-index: 2;
-  }
-  footer span { color: var(--pink1); }
+</td>
+</tr>
+</table>
 
-  /* SCROLL REVEAL */
-  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+---
 
-  @media (max-width: 900px) {
-    nav { padding: 1.2rem 1.5rem; }
-    section { padding: 5rem 1.5rem; }
-    .divider { margin: 0 1.5rem; }
-    #hero { padding: 7rem 1.5rem 4rem; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-card-wrap { display: none; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .patent-card { grid-column: span 1; flex-direction: column; }
-    .skills-layout { grid-template-columns: 1fr; }
-    .certs-grid { grid-template-columns: 1fr; }
-    .edu-card { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .edu-card::after { display: none; }
-    .nav-links { display: none; }
-  }
-</style>
-</head>
-<body>
+## 🛠️ Tech Stack
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+```
+Frontend    →  HTML5 · CSS3 · JavaScript (ES6+) · Responsive Design
+AI / ML     →  TensorFlow/Keras · EfficientNetB0 · scikit-image · OpenCV · SciPy
+NLP & RAG   →  HuggingFace Transformers · NLTK · Document Chunking & Retrieval
+Agents      →  Agentic LLM Workflows · Tool-Calling · Google Gemini API · FastAPI
+Backend     →  Python · Flask · FastAPI · REST APIs · SQLite
+Tools       →  Jupyter · Google Colab · Streamlit · Git · GitHub · VS Code
+```
 
-<!-- FLOATING HEARTS -->
-<div class="hearts-bg" id="heartsBg"></div>
+---
 
-<!-- BLOBS -->
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+## 📁 Project Structure
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Mansa<span>✿</span></div>
-  <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certs">Certs</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+```
+my-website/
+└── index.html       ← single-file SPA (HTML + embedded CSS + JS)
+```
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-badge"><span class="badge-dot"></span>Open to Internships & Collabs 🌸</div>
-      <h1 class="hero-name">Mansa<br><em>Thallapalli</em></h1>
-      <p class="hero-bio">
-        3rd-year AI&ML engineer at Woxsen University. I build intelligent systems — from biometric auth to medical ML — and hold a registered Indian Patent. Let's create something beautiful & impactful ✿
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-pink">See My Work 🌸</a>
-        <a href="#contact" class="btn btn-soft">Say Hello ✉️</a>
-      </div>
-    </div>
-    <div class="hero-card-wrap">
-      <div class="hero-3d-card" id="card3d">
-        <div class="card-deco-top"></div>
-        <div class="card-avatar">M</div>
-        <div class="card-name-sm">Mansa Thallapalli</div>
-        <div class="card-role-sm">AI/ML Engineer · Patent Holder ✿</div>
-        <div class="card-stats">
-          <div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Projects</div></div>
-          <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Certs</div></div>
-          <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Patent</div></div>
-          <div class="stat-box"><div class="stat-num">'27</div><div class="stat-label">Grad</div></div>
-        </div>
-        <div class="card-tags">
-          <span class="ctag">Python</span>
-          <span class="ctag">TensorFlow</span>
-          <span class="ctag">NLP</span>
-          <span class="ctag">React</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+> Built as a zero-dependency, single-file site for instant GitHub Pages deployment with no build step required.
 
-<div class="divider"></div>
+---
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-inner">
-    <div class="section-label">Selected Work</div>
-    <h2 class="section-title">My <em>Projects</em></h2>
-    <div class="projects-grid">
+## ⚡ Deployment
 
-      <div class="project-card reveal" data-num="01">
-        <div class="project-icon pi1">🔒</div>
-        <div class="project-title">Secure First: Fingernail-Based Biometric Auth</div>
-        <div class="project-desc">Built a fingernail-based biometric authentication system using segmentation, feature extraction, and template matching for secure & unique user identification.</div>
-        <div class="project-tags">
-          <span class="tag">Computer Vision</span><span class="tag">Image Processing</span><span class="tag">Biometrics</span><span class="tag">Python</span>
-        </div>
-      </div>
+This site is deployed automatically via **GitHub Pages** from the `main` branch.
 
-      <div class="project-card reveal" data-num="02">
-        <div class="project-icon pi2">📝</div>
-        <div class="project-title">SnapSummary: NLP Real-Time Text Summarization</div>
-        <div class="project-desc">NLP-based system using transformer models for real-time summarization — generating concise, meaningful summaries from lengthy content instantly.</div>
-        <div class="project-tags">
-          <span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Python</span><span class="tag">HuggingFace</span>
-        </div>
-      </div>
+```bash
+# Clone the repo
+git clone https://github.com/Mansa15/my-website.git
 
-      <div class="project-card reveal" data-num="03">
-        <div class="project-icon pi3">🫀</div>
-        <div class="project-title">Early Detection of Pulmonary Arterial Hypertension</div>
-        <div class="project-desc">ML-based approach to detect early signs of PAH by analyzing medical imaging data for abnormalities — enabling earlier and better clinical intervention.</div>
-        <div class="project-tags">
-          <span class="tag">Medical Imaging</span><span class="tag">Machine Learning</span><span class="tag">Healthcare AI</span>
-        </div>
-      </div>
+# Open locally — no install needed
+open index.html
+```
 
-      <div class="project-card reveal" data-num="04">
-        <div class="project-icon pi4">🌡️</div>
-        <div class="project-title">Thermal Image Equipment Fault Detection</div>
-        <div class="project-desc">Designed and benchmarked fault detection algorithms on thermal image data to compare performance for equipment condition monitoring.</div>
-        <div class="project-tags">
-          <span class="tag">Thermal Imaging</span><span class="tag">Algorithm Design</span><span class="tag">Benchmarking</span>
-        </div>
-      </div>
+Any push to `main` reflects live at **[mansa15.github.io/my-website](https://mansa15.github.io/my-website/)** within minutes.
 
-      
-      <div class="project-card reveal" data-num="05">
-        <div class="project-icon pi5">🤖</div>
-        <div class="project-title">Agentic Enterprise – CEO Console</div>
-        <div class="project-desc">Gemini-powered agent handles conversational KPI queries and autonomously retrieves, analyses, and
-          summarises enterprise data across 6 REST endpoints (plan, approve, reject, audit).
-          </div>
-        <div class="project-tags">
-          <span class="tag">Agentic AI</span>
-        </div>
-      </div>
-      </div>
+---
 
-    </div>
-  </div>
-</section>
+## 🏆 Highlights
 
-<div class="divider"></div>
+- 🧠 **Registered Design Patent** — *Agriculture Soil Monitoring AI-Drone Device* (Design No. 455144-001, Indian Patent Office, April 2025)
+- 🥇 **Agent X Hackathon** — Shipped a production-grade governed agentic CEO Console in 12 hours
+- 📜 **4 Certifications** — AWS Generative AI · IBM Watson · ML Specialization · NPTEL Elite
+- 🎓 **9.07 CGPA** — B.Tech AI & ML, Woxsen University (2023–2027)
+- 🌐 **Google for Startups Hub** — Volunteered at T-Hub Hyderabad GCC event, 2026
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-inner">
-    <div class="section-label">My Toolkit</div>
-    <h2 class="section-title">Skills & <em>Expertise</em></h2>
-    <div class="skills-layout">
-      <div class="skill-cats">
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">Core Domain</div>
-          <div class="skill-cat-title">AI/ML & Data Science</div>
-          <div class="skill-pills">
-            <span class="skill-pill">Model Building</span><span class="skill-pill">Neural Networks</span><span class="skill-pill">NLP</span><span class="skill-pill">Computer Vision</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">EfficientNetB0</span><span class="skill-pill">Scikit-Image</span>
-          </div>
-        </div>
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">Programming</div>
-          <div class="skill-cat-title">Languages</div>
-          <div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">JavaScript</span></div>
-        </div>
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">Frontend & Backend</div>
-          <div class="skill-cat-title">Web & App Dev</div>
-          <div class="skill-pills"><span class="skill-pill">React</span><span class="skill-pill">Node.js</span><span class="skill-pill">HTML</span><span class="skill-pill">CSS</span></div>
-        </div>
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">Data</div>
-          <div class="skill-cat-title">Databases</div>
-          <div class="skill-pills"><span class="skill-pill">MongoDB</span><span class="skill-pill">SQL</span><span class="skill-pill">SQL-lite</span></div>
-        </div>
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">Tools</div>
-          <div class="skill-cat-title">Dev Environment</div>
-          <div class="skill-pills"><span class="skill-pill">VS Code</span><span class="skill-pill">Jupyter Notebook</span><span class="skill-pill">Streamlit</span><span class="skill-pill">Google colab</span><span class="skill-pill">Git</span></div>
-        </div>
-        <div class="skill-cat reveal">
-          <div class="skill-cat-label">NLP-RAG</div>
-          <div class="skill-cat-title">NLP-RAG</div>
-          <div class="skill-pills"><span class="skill-pill">HuggingFace Transformers</span><span class="skill-pill"> NLTK</span><span class="skill-pill"> Document chunking & retrieval</span></div>
-        </div>
-      </div>
+---
 
-      <div class="skills-right reveal">
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">Python & AI/ML</span><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%;animation-delay:0.1s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">Computer Vision</span><span class="skill-bar-pct">80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%;animation-delay:0.2s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">NLP & Transformers</span><span class="skill-bar-pct">78%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%;animation-delay:0.3s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">TensorFlow / Deep Learning</span><span class="skill-bar-pct">75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%;animation-delay:0.4s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">React / Node.js</span><span class="skill-bar-pct">75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%;animation-delay:0.5s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">Databases</span><span class="skill-bar-pct">70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%;animation-delay:0.7s"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">NLP</span><span class="skill-bar-pct">70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%;animation-delay:0.7s"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+## 📬 Get In Touch
 
-<div class="divider"></div>
+I'm actively seeking **internships** in Computer Vision, NLP, ML, and Web Development.
 
-<!-- CERTS -->
-<section id="certs">
-  <div class="section-inner">
-    <div class="section-label">Credentials</div>
-    <h2 class="section-title"><em>Certifications</em></h2>
-    <div class="patent-card reveal">
-      <div class="patent-badge">🛰️</div>
-      <div class="patent-text">
-        <h3>Registered Design Patent — Indian Patent Office</h3>
-        <p>Agriculture Soil Monitoring AI-Drone Device (Design No. 455144-001). An intelligent AI-powered drone for real-time agricultural soil analysis.</p>
-        <div class="patent-meta">🌸 April 2025 · Design No. 455144-001</div>
-      </div>
-    </div>
-    <div class="certs-grid">
-      <div class="cert-card reveal">
-        <div class="cert-icon">☁️</div>
-        <div class="cert-org">AWS Academy</div>
-        <div class="cert-name">Generative AI Foundations Certificate</div>
-      </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon">🤖</div>
-        <div class="cert-org">IBM</div>
-        <div class="cert-name">Watson Services — Rapid Development for AI Certificate</div>
-      </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon">📊</div>
-        <div class="cert-org">Coursera</div>
-        <div class="cert-name">Machine Learning Specialization Certificate</div>
-      </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon">📊</div>
-        <div class="cert-org">NPTEL Certification</div>
-        <div class="cert-name">Strategic Performance Management (Funded by the MoE, Govt. of India)</div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div align="center">
 
-<div class="divider"></div>
+| | |
+|---|---|
+| 📧 Email | [thallapallimansa7@gmail.com](mailto:thallapallimansa7@gmail.com) |
+| 💼 LinkedIn | [mansa-thallapalli-561441296](https://www.linkedin.com/in/mansa-thallapalli-561441296/) |
+| 🐙 GitHub | [github.com/Mansa15](https://github.com/Mansa15) |
+| 📱 Phone | [+91-6364081789](tel:+916364081789) |
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-inner">
-    <div class="section-label">Journey</div>
-    <h2 class="section-title">Experience</h2>
-    <div class="exp-timeline">
-      <div class="exp-item reveal">
-        <div class="exp-title">Hackathon Participant — Agent X</div>
-        <div class="exp-meta">12-Hour Hackathon · Agentic Enterprise CEO Console</div>
-        <div class="exp-desc">Collaborated under intense time pressure to build a working prototype — an Agentic Enterprise CEO console. Strengthened problem-solving, teamwork, and rapid prototyping skills.</div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-title">IEEE Conference Volunteer</div>
-        <div class="exp-meta">IEEE · Event Coordination & Session Management</div>
-        <div class="exp-desc">Supported coordination and session management at a professional IEEE conference, showcasing organizational skills in a high-level technical environment.</div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-title">Ideathon Participant</div>
-        <div class="exp-meta">ML for Social Impact</div>
-        <div class="exp-desc">Applied ML models to real-time social challenges, developing impactful solutions from scratch in a competitive ideation environment.</div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-title">Google for Startups Hub (GCC Event) – T-Hub Hyderabad</div>
-        <div class="exp-meta">Volunteering</div>
-        <div class="exp-desc">Assisted in operations and event coordination for the technical community gathering and AI-first startup
-          ecosystem mixer. Engaged with developers, founders, and industry representatives analyzing advancements in Agentic AI
-          architectures, cloud workflows, and Google's startup stack.</div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-title">Internship @ InAmigos </div>
-        <div class="exp-meta">Web Development Intern</div>
-        <div class="exp-desc">Contributed to full-stack enhancements to optimize web application responsiveness, performance, and UI layout</div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
-<div class="divider"></div>
+---
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-inner">
-    <div class="section-label">Academic Background</div>
-    <h2 class="section-title">Education</h2>
-    <div class="edu-card reveal">
-      <div class="edu-logo">🎓</div>
-      <div>
-        <div class="edu-degree">B.Tech · Computer Science (AI & ML)</div>
-        <div class="edu-school">Woxsen University</div>
-        <div class="edu-field">Hyderabad, Telangana</div>
-        <div class="edu-year">🌸 2023 – 2027</div>
-      </div>
-    </div>
-  </div>
-</section>
+<div align="center">
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner">
-    <div class="contact-card reveal">
-      <div class="contact-flowers">✿</div>
-      <div class="contact-title">Let's <em>Connect!</em></div>
-      <div class="contact-sub">Open to internships, research collabs & exciting AI/ML projects.</div>
-      <div class="contact-links">
-        <a href="mailto:thallapallimansa7@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email Me
-        </a>
-        <a href="https://www.linkedin.com/in/mansa-thallapalli-561441296/" target="_blank" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/Mansa15" target="_blank" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <a href="tel:+916364081789" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +91-6364081789
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=100&section=footer&animation=fadeIn" width="100%" />
 
-<footer>
-  Made with <span>✿ love</span> · Mansa Thallapalli © 
-</footer>
+*Made with ✿ love · Mansa Thallapalli*
 
-<script>
-  // Cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx=0, my=0, rx=0, ry=0;
-  document.addEventListener('mousemove', e => {
-    mx=e.clientX; my=e.clientY;
-    cursor.style.left=mx+'px'; cursor.style.top=my+'px';
-  });
-  (function animRing(){
-    rx+=(mx-rx)*0.11; ry+=(my-ry)*0.11;
-    ring.style.left=rx+'px'; ring.style.top=ry+'px';
-    requestAnimationFrame(animRing);
-  })();
-  document.querySelectorAll('a,button,.project-card,.skill-cat,.cert-card').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{
-      cursor.style.transform='translate(-50%,-50%) scale(2.2)';
-      cursor.style.background='var(--lilac)';
-      ring.style.transform='translate(-50%,-50%) scale(1.6)';
-    });
-    el.addEventListener('mouseleave',()=>{
-      cursor.style.transform='translate(-50%,-50%) scale(1)';
-      cursor.style.background='var(--pink1)';
-      ring.style.transform='translate(-50%,-50%) scale(1)';
-    });
-  });
-
-  // 3D card tilt
-  const card=document.getElementById('card3d');
-  if(card){
-    document.addEventListener('mousemove',e=>{
-      const r=card.getBoundingClientRect();
-      const dx=(e.clientX-(r.left+r.width/2))/22;
-      const dy=(e.clientY-(r.top+r.height/2))/22;
-      card.style.transform=`rotateY(${dx}deg) rotateX(${-dy}deg)`;
-    });
-  }
-
-  // Floating hearts
-  const heartsContainer = document.getElementById('heartsBg');
-  const heartChars = ['✿','🌸','💗','🌷','✦','♡','❀'];
-  for(let i=0;i<18;i++){
-    const h=document.createElement('div');
-    h.className='heart';
-    h.textContent=heartChars[Math.floor(Math.random()*heartChars.length)];
-    h.style.left=Math.random()*100+'vw';
-    h.style.animationDuration=(12+Math.random()*20)+'s';
-    h.style.animationDelay=(Math.random()*20)+'s';
-    h.style.fontSize=(0.7+Math.random()*1.2)+'rem';
-    heartsContainer.appendChild(h);
-  }
-
-  // Scroll reveal
-  const reveals=document.querySelectorAll('.reveal');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach((e,i)=>{
-      if(e.isIntersecting){
-        setTimeout(()=>e.target.classList.add('visible'),i*90);
-        obs.unobserve(e.target);
-      }
-    });
-  },{threshold:0.1});
-  reveals.forEach(el=>obs.observe(el));
-</script>
-</body>
-</html>
+</div>
